@@ -67,9 +67,9 @@ int main() {
 
     while (1) {
         printf("\n***** Enter the Choice ******\n");
-        printf("1. Push item in the queue\n");
-        printf("2. Pop item from the queue\n");
-        printf("3. Display items in the queue\n");
+        printf("1. Push item in the Circular Queue\n");
+        printf("2. Pop item from the Circular Queue\n");
+        printf("3. Display items in the Circular Queue\n");
         printf("4. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
