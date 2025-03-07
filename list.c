@@ -35,8 +35,8 @@ void delete() {
         return;
     }
 
-    // Store deleted element (optional, if needed)
-    int deletedItem = a[pos - 1];
+    // Store deleted element
+    int trashBin = a[pos - 1];
 
     // Shift elements to the left
     for (i = pos - 1; i < size - 1; i++) {
@@ -45,7 +45,7 @@ void delete() {
 
     size--;
 
-    printf("Element %d deleted successfully!\n", deletedItem);
+    printf("Element %d deleted successfully!\n", trashBin);
 }
 
 void display() {
