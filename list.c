@@ -1,52 +1,51 @@
 #include <stdio.h>
-
 int a[50], size, i, num, pos;
 
-void insert() {
-    printf("Enter the element that you want to insert: ");
-    scanf("%d", &num);
+    void insert() {
+        printf("Enter the element that you want to insert: ");
+        scanf("%d", &num);
 
-    printf("Enter the position where you want to insert it (1-based index): ");
-    scanf("%d", &pos);
+        printf("Enter the position where you want to insert it (1-based index): ");
+        scanf("%d", &pos);
 
-    if (pos <= 0 || pos > size + 1) {
-        printf("Invalid Position!\n");
-        return;
+        if (pos <= 0 || pos > size + 1) {
+            printf("Invalid Position!\n");
+            return;
+        }
+
+        // Shifting elements to the right
+        for (i = size; i >= pos; i--) {
+            a[i] = a[i - 1];
+        }
+
+        // Insert element at the given position
+        a[pos - 1] = num;
+        size++;
+
+        printf("Element inserted successfully!\n");
     }
 
-    // Shifting elements to the right
-    for (i = size; i >= pos; i--) {
-        a[i] = a[i - 1];
+    void delete() {
+        printf("Enter the position of the element you want to delete (1-based index): ");
+        scanf("%d", &pos);
+
+        if (pos <= 0 || pos > size) {
+            printf("Invalid Position!\n");
+            return;
+        }
+
+        // Store deleted element
+        int trashBin = a[pos - 1];
+
+        // Shift elements to the left
+        for (i = pos - 1; i < size - 1; i++) {
+            a[i] = a[i + 1];
+        }
+
+        size--;
+
+        printf("Element %d deleted successfully!\n", trashBin);
     }
-
-    // Insert element at the given position
-    a[pos - 1] = num;
-    size++;
-
-    printf("Element inserted successfully!\n");
-}
-
-void delete() {
-    printf("Enter the position of the element you want to delete (1-based index): ");
-    scanf("%d", &pos);
-
-    if (pos <= 0 || pos > size) {
-        printf("Invalid Position!\n");
-        return;
-    }
-
-    // Store deleted element
-    int trashBin = a[pos - 1];
-
-    // Shift elements to the left
-    for (i = pos - 1; i < size - 1; i++) {
-        a[i] = a[i + 1];
-    }
-
-    size--;
-
-    printf("Element %d deleted successfully!\n", trashBin);
-}
 
 void display() {
     if (size == 0) {
