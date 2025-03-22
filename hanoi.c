@@ -13,7 +13,6 @@ int main()
 
     printf("The sequence of moves involved in the Tower of Hanoi are:\n");
     towers(num, 'A', 'C', 'B');
-
     return 0;
 }
 
