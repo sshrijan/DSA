@@ -16,14 +16,14 @@ int main()
     return 0;
 }
 
-void towers(int num, char frompeg, char topeg, char auxpeg)
+void towers(int num, char fromPeg, char toPeg, char auxPeg)
 {
     if (num == 1)
     {
-        printf("Move disk 1 from peg %c to peg %c\n", frompeg, topeg);
+        printf("Move disk 1 from peg %c to peg %c\n", fromPeg, toPeg);
         return;
     }
-    towers(num - 1, frompeg, auxpeg, topeg);
-    printf("Move disk %d from peg %c to peg %c\n", num, frompeg, topeg);
-    towers(num - 1, auxpeg, topeg, frompeg);
+    towers(num - 1, fromPeg, auxPeg, toPeg);
+    printf("Move disk %d from peg %c to peg %c\n", num, fromPeg, toPeg);
+    towers(num - 1, auxPeg, toPeg, fromPeg);
 }
